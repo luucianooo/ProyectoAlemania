@@ -9,7 +9,6 @@
         <title>Pagina AR</title>
     </head>
     <body>
-        
         <div class="contenidoAR">    
             <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: true">
                 <a-nft
@@ -31,11 +30,9 @@
         </div>
         <script>
             const socket = newWebSocket("ws://localhost:8765");
-
             socket.onopen = function(event){
                 console.log("Conexion WebSpocket establecida");
             };
-             
             socket.onmessage = function(event) {
                 const datos = event.data;
                 const img = new Image();
@@ -58,9 +55,6 @@
                     text.setAttribute("value", "No se ha detectado el cessna 172");
                 }
             };
-            
-
-
         </script>
     </body>
 </html>
